@@ -1,5 +1,7 @@
 <?php
 
+use PharIo\Manifest\Url;
+
 return [
 
     /*
@@ -14,7 +16,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Elisur',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -35,25 +37,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Google Fonts
-    |--------------------------------------------------------------------------
-    |
-    | Here you can allow or not the use of external google fonts. Disabling the
-    | google fonts may be useful if your admin panel internet access is
-    | restricted somehow.
-    |
-    | For detailed instructions you can look the google fonts section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'google_fonts' => [
-        'allowed' => true,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Admin Panel Logo
+    | Logo
     |--------------------------------------------------------------------------
     |
     | Here you can change the logo of your admin panel.
@@ -63,59 +47,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Elisur</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Logo
-    |--------------------------------------------------------------------------
-    |
-    | Here you can setup an alternative logo to use on your login and register
-    | screens. When disabled, the admin panel logo will be used instead.
-    |
-    | For detailed instructions you can look the auth logo section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'auth_logo' => [
-        'enabled' => false,
-        'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
-            'class' => '',
-            'width' => 50,
-            'height' => 50,
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Preloader Animation
-    |--------------------------------------------------------------------------
-    |
-    | Here you can change the preloader animation configuration.
-    |
-    | For detailed instructions you can look the preloader section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'preloader' => [
-        'enabled' => true,
-        'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
-        ],
-    ],
+    'logo_img_alt' => 'Elisur',
 
     /*
     |--------------------------------------------------------------------------
@@ -130,12 +67,34 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_header' => true,
+    'usermenu_header_class' => 'bg-danger',
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
+/*
+    |--------------------------------------------------------------------------
+    | Preloader Animation
+    |--------------------------------------------------------------------------
+    |
+    | Here you can change the preloader animation configuration.
+    |
+    | For detailed instructions you can look the preloader section here:
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
+    |
+    */
 
+    'preloader' => [
+        'enabled' => true,
+        'img' => [
+            'path' => 'vendor/adminlte/dist/img/inicio.jpg',
+            'alt' => 'AdminLTE Preloader Image',
+            'effect' => 'img-circle animation__shake',
+            'width' => 200,
+            'height' => 200,
+        ],
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | Layout
@@ -150,7 +109,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => false,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -167,13 +126,12 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-danger',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
-
     /*
     |--------------------------------------------------------------------------
     | Admin Panel Classes
@@ -187,14 +145,14 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-danger',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-white-danger elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-danger navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -218,7 +176,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 200,
 
     /*
     |--------------------------------------------------------------------------
@@ -232,13 +190,14 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -304,26 +263,172 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Buscar',
         ],
+
+       
+        
+    
+
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+ 
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text'        => 'Inicio',
+            'url'         => 'admin',
+            'icon'        => 'far fa-fw fas fa-home',
+            'icon_color'=>'red',
+            
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Menu Administrador'],
+
+
+       /* ['text'=>'Administracion de  Usuario',
+        'icon'=>'far fa-fw fas 	far fa-clipboard',
+        'icon_color' => 'red',
+        'submenu'=>[
+        
         [
-            'text' => 'profile',
+
+            'text' => 'Ediar Usuario',
+            'url'  => '#',
+            'icon'=>'far fa-fw fas fa-child',
+            'icon_color' => 'red',
+        ],
+
+        [
+
+            'text' => 'Eliminar Usuario',
+            'url'  => '#',
+            'icon'=>'fas fa-user-alt-slash',
+            'icon_color' => 'red',
+        ],
+
+
+
+
+        ],//cierra menu*/
+
+        [
+
+            'text' => 'Personas',
+            'url'  => 'personas',
+            'icon'=>'far fa-fw fas fa-user-friends',
+            'icon_color' => 'red',
+        ],
+
+
+        [
+            'text'       => 'Inventario',
+            'icon'=>'far fa-fw fas fas fa-percent',
+            'icon_color' => 'red',
+            'url'        => 'inventario',
+        ],
+
+       
+      
+        [
+            'text'       => 'Bolsa de trabajo',
+            'icon'=>'far fa-fw fas fa-people-arrows',
+            'icon_color' => 'red',
+            'url'        => 'bolsa_trabajo_admin',
+            'label'       => '4',
+            'label_color' => 'danger',
+        ],
+        [
+            'text'       => 'Reportes',
+            'icon'=>'far fa-fw fas fas fa-percent',
+            'icon_color' => 'red',
+            'url'        => 'reportes',
+        ],
+    
+
+        [
+
+            'text' => 'Bitacora de actividades',
+            'url'  => 'bitacora_admin',
+            'icon'=>'far fa-fw 	fas fa-file-invoice',
+            'icon_color' => 'red',
+        ],
+        
+
+    ['header' => 'Menu Cliente'],
+
+    [
+        'text'       => 'Reportar falla',
+        'icon'=>'far fa-fw fas fa-ban',
+        'icon_color' => 'red',
+        'url'        => 'falla',
+    ],
+
+  
+    [
+        'text'       => 'Solicitar Presupuesto',
+        'icon'=>'far fa-fw  fas fa-chart-line',
+        'icon_color' => 'red',
+        'url'        => 'catalogo',
+    ],
+
+    [
+        'text'       => 'Encuesta de satifaccion',
+        'icon'=>'far fa-fw  fas fa-check-square',
+        'icon_color' => 'red',
+        'url'        => 'encuesta',
+
+    ],
+
+    [
+
+        'text' => 'Bitacora de Solicitudes',
+        'url'  => 'bitacora_cliente',
+        'icon'=>'far fa-fw 	fas fa-file-invoice',
+        'icon_color' => 'red',
+    ],
+
+    ['header' => 'Menu Empleado'],
+
+    [
+        'text'       => 'Bolsa de trabajo',
+        'icon'=>'far fa-fw 	fas fas fa-calendar-check',
+        'icon_color' => 'red',
+        'url'        => 'bolsa_emp',
+    ],
+
+
+
+  
+    /*[
+        'text'       => 'Herramientas',
+        'icon'=>'far fa-fw  	fas fa-business-time',
+        'icon_color' => 'red',
+        'url'        => '#',
+    ],*/
+
+    
+
+
+],//termina side bar menu
+
+
+
+
+        /*[
+            'text' => 'Usuarios',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
+
+        [
+            'text' => 'Editar usuario',
+            'url'  => '#',
+            'icon'=>'far fa-fw fas fa-child'
+    
+        ],
+
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
@@ -366,24 +471,10 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
-    ],
+        ], comentado por que no se va usar*/
+
+
+        
 
     /*
     |--------------------------------------------------------------------------
@@ -441,12 +532,12 @@ return [
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'asset' => true,
+                    'location' => 'vendor/select2/js/select2.full.min.js',
                 ],
                 [
                     'type' => 'css',
@@ -456,11 +547,11 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js',
                 ],
             ],
